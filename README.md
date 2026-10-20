@@ -4,8 +4,10 @@
 
 [![Engine](https://img.shields.io/badge/Engine-Three.js%20WebGL-00D2FF?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
 [![Platform](https://img.shields.io/badge/Platform-Web%20%7C%20Android%20APK-8A2BE2?style=for-the-badge&logo=android&logoColor=white)](#-android-apk-build)
+[![Author](https://img.shields.io/badge/Author-Ahmed%20Raza%20Khan-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ahmedrazakhann)
+[![Role](https://img.shields.io/badge/Role-AI%20Software%20Engineer-00b894?style=for-the-badge&logo=openai&logoColor=white)](https://theahmedraza.com)
+[![Deconstructed With](https://img.shields.io/badge/Deconstructed%20With-REA-ff4757?style=for-the-badge&logo=powershell&logoColor=white)](https://github.com/morluto/rea)
 [![Performance](https://img.shields.io/badge/FPS-60%20Solid%20%7C%20Zero%20Lag-brightgreen?style=for-the-badge&logo=speedtest&logoColor=white)](#-performance--optimization)
-[![Reverse Engineered](https://img.shields.io/badge/Deconstructed%20With-REA-ff4757?style=for-the-badge&logo=powershell&logoColor=white)](https://github.com/Ark-Dev-Team/rea)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 <p align="center">
@@ -13,7 +15,7 @@
   <i>100% procedural WebGL graphics • Zero external assets or network fetches • Native Android WebView + Web build.</i>
 </p>
 
-[**🎮 Play Instantly**](#-quick-start) • [**📱 Mobile Screenshots**](#-visual-showcase) • [**📐 Architecture**](#-system-architecture) • [**⚙️ Reverse Engineering**](#-reverse-engineering-with-rea) • [**📦 Build APK**](#-android-apk-build)
+[**🎮 Play Instantly**](#-quick-start) • [**📱 Mobile Screenshots**](#-visual-showcase) • [**📐 Architecture**](#-system-architecture) • [**⚙️ Reverse Engineering**](#-reverse-engineering-with-rea) • [**📦 Build APK**](#-android-apk-build) • [**👨‍💻 Author**](#-author--engineer)
 
 </div>
 
@@ -70,19 +72,19 @@ Experience authentic arcade visuals with hand-crafted procedural shaders, atmosp
 
 ## 🔬 Reverse Engineering with REA
 
-This project was developed through rigorous clean-room reverse engineering powered by **REA (Reverse Engineer Anything)**:
+This project was developed through rigorous clean-room reverse engineering powered by **[REA (Reverse Engineer Anything)](https://github.com/morluto/rea)**:
 
 ```mermaid
 flowchart LR
-    A["Target Binary / Mechanics Analysis\n(Subway Surfers APK)"] --> B["REA Evidence Extraction\n(Kinematic Curves & Timing)"]
-    B --> C["Clean-Room Mathematical Model\n(Lanes, Gravity, Jump Velocities)"]
-    C --> D["WebGL Procedural Engine\n(Three.js + HTML5 Web Audio)"]
-    D --> E["Cross-Platform Deployment\n(Browser + Android APK)"]
+    A["Target Binary / Mechanics Analysis<br/>(Subway Surfers APK)"] --> B["REA Evidence Extraction<br/>(Kinematic Curves & Timing)"]
+    B --> C["Clean-Room Mathematical Model<br/>(Lanes, Gravity, Jump Velocities)"]
+    C --> D["WebGL Procedural Engine<br/>(Three.js + HTML5 Web Audio)"]
+    D --> E["Cross-Platform Deployment<br/>(Browser + Android APK)"]
     
     style A fill:#2d3436,stroke:#ff7675,stroke-width:2px,color:#fff
     style B fill:#2d3436,stroke:#74b9ff,stroke-width:2px,color:#fff
-    style C fill:#2d3436,stroke:#ffeaa7,stroke-width:2px,color:#333
-    style D fill:#2d3436,stroke:#55efc4,stroke-width:2px,color:#333
+    style C fill:#2d3436,stroke:#ffeaa7,stroke-width:2px,color:#fff
+    style D fill:#2d3436,stroke:#55efc4,stroke-width:2px,color:#fff
     style E fill:#2d3436,stroke:#a29bfe,stroke-width:2px,color:#fff
 ```
 
@@ -208,6 +210,35 @@ products/games/subway-surfers/
 
 ---
 
+## 👨‍💻 Author & Engineer
+
+<div align="center">
+
+### **Ahmed Raza Khan**
+**AI Software Engineer | Cloud & AI Systems Architecture | Javascript & Python**
+
+[![Website](https://img.shields.io/badge/Portfolio-theahmedraza.com-4A90E2?style=flat-square&logo=googlechrome&logoColor=white)](https://theahmedraza.com)
+[![GitHub](https://img.shields.io/badge/GitHub-ahmedrazakhann-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/ahmedrazakhann)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-ahmedrazakhannn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/ahmedrazakhannn)
+[![Email](https://img.shields.io/badge/Email-ahmedrazakhank112%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:ahmedrazakhank112@gmail.com)
+
+</div>
+
+AI Engineer with 2+ years of production engineering experience building and deploying AI-powered systems, intelligent agents, and automated tool workflows, with a growing specialization in Machine Learning and Deep Learning. Experienced in production LLM and NLP workflows, agentic systems, data processing pipelines, backend engineering, and performance optimization.
+
+### 🏆 Industry Certifications
+- **AWS Certified Machine Learning Engineer Associate** — *Amazon Web Services (Feb 2026)*
+- **AWS Certified AI Practitioner** — *Amazon Web Services (Oct 2025)*
+- **Claude Code Architect (CCA)** — *Anthropic (Aug 2026)*
+
+### 🛠️ Core Technical Expertise
+- **AI / Machine Learning**: Python, Node.js, Embeddings, Semantic Search, RAG, AI Agents, Tool Calling & Automation, PyTorch, Model Evaluation
+- **AI Systems & Engineering**: LLM Integration (AWS Bedrock, OpenAI, Groq), Agentic Workflows, Data Processing Pipelines, Prompt Engineering
+- **Backend & Data**: Python, FastAPI, REST API Design, Microservices, WebSockets, PostgreSQL, MySQL, Amazon DynamoDB, Redis
+- **Cloud & ML Infrastructure**: AWS (Bedrock, SageMaker, EC2, S3), Docker, GitHub Actions CI/CD, Model Deployment, Vercel
+
+---
+
 ## ⚖️ Clean-Room & Legal Notice
 
 This project is an independent clean-room software engineering research recreation inspired by the mechanics of Subway Surfers. All code, 3D procedural geometries, texture generators, audio synthesis routines, and UI styling were written from scratch. No proprietary assets, extracted binaries, textures, or code from SYBO Games or Kiloo were copied or distributed. Subway Surfers is a registered trademark of SYBO Games.
@@ -216,7 +247,7 @@ This project is an independent clean-room software engineering research recreati
 
 <div align="center">
 
-**Built with ❤️ using [REA (Reverse Engineer Anything)](https://github.com/Ark-Dev-Team/rea)**
+**Built with ❤️ by [Ahmed Raza Khan](https://github.com/ahmedrazakhann) using [REA (Reverse Engineer Anything)](https://github.com/morluto/rea)**
 
 </div>
-# rea-subway-surfers
+
