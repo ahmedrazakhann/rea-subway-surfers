@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Subway Runner 3D</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="three.min.js"></script>
+</head>
+<body>
+  <div id="game-wrapper">
+    <!-- 3D WebGL Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- IN-GAME HUD (Exact Subway Surfers Style) -->
+    <div id="hud" class="screen-layer">
+      <!-- Top Left: Authentic Glossy Blue Pause Button -->
+      <div class="hud-top-left">
+        <button id="btn-pause" class="ss-pause-btn" aria-label="Pause">
+          <span class="pause-bar"></span>
+          <span class="pause-bar"></span>
+        </button>
+
+        <!-- Active Power-Up Badges on Left Side -->
+        <div id="hud-powerups-list" class="ss-powerups-list">
+          <!-- Dynamically populated power-up items -->
+        </div>
+      </div>
+
+      <!-- Top Right: Exact Multiplier, Score & Coin Counters -->
+      <div class="hud-top-right">
+        <!-- Score Row: Multiplier + Score Pill -->
+        <div class="ss-score-row">
+          <div class="ss-multiplier" id="hud-multiplier">
+            <span class="mult-prefix">x</span><span class="mult-val" id="mult-number">1</span>
+            <span class="mult-star">★</span>
+          </div>
+          <div class="ss-stat-pill ss-score-pill">
+            <span id="hud-score-count">000000</span>
+          </div>
+        </div>
+
+        <!-- Coin Counter Pill (Stacked underneath Score) -->
+        <div class="ss-coins-row">
+          <div class="ss-stat-pill ss-coin-pill">
+            <span id="hud-coin-count">0</span>
+            <div class="ss-coin-icon">
+              <span class="coin-star">★</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Top Run Chase Widget (Subway Surfers Friend Chase) -->
+        <div class="ss-chase-widget" id="chase-card">
+          <div class="chase-avatar">🏃</div>
+          <div class="chase-info">
+            <span class="chase-label">TOP RUN</span>
+            <span class="chase-score" id="chase-score-val">10000</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Double Tap for Hoverboard Indicator -->
+      <div id="hoverboard-prompt" class="ss-prompt-badge">
+        <span class="board-icon">🛹</span> DOUBLE TAP FOR HOVERBOARD
+      </div>
+
+      <!-- Arcade Announcements & Near-Miss Floating Popups -->
+      <div id="hud-announcements" class="ss-announcements-container"></div>
+    </div>
+
+    <!-- MAIN TITLE MENU (Subway Surfers Full Visual Presentation) -->
+    <div id="screen-main-menu" class="screen-layer ss-title-screen active">
+      <div class="ss-title-top">
+        <div class="ss-logo-container">
+          <div class="ss-logo-main">SUBWAY</div>
+          <div class="ss-logo-sub">SURFERS</div>
+          <div class="ss-tour-banner">
+            <span class="tour-text">WORLD TOUR</span>
+            <span class="tour-city">METRO 3D</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ss-title-bottom">
+        <div class="ss-menu-card">
+          <div class="ss-trophy">🏆</div>
+          <div class="ss-card-details">
+            <span class="ss-card-title">TOP RECORD</span>
+            <span class="ss-card-val" id="menu-high-score">0</span>
+          </div>
+        </div>
+
+        <div class="ss-play-container">
+          <button id="btn-play" class="ss-btn-play">
+            <span class="play-arrow">▶</span>
+            <span class="play-label">TAP TO PLAY</span>
+          </button>
+        </div>
+
+        <div class="ss-quick-controls">
+          <span>⬅️ ➡️ Swipe Lane</span>
+          <span>⬆️ Jump</span>
+          <span>⬇️ Roll</span>
+          <span>🛹 2x Tap Board</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAUSE MENU -->
+    <div id="screen-pause" class="screen-layer overlay">
+      <div class="ss-modal">
+        <h2 class="ss-modal-title">PAUSED</h2>
+        <div class="ss-modal-stats">
+          <div class="ss-stat-line">
+            <span>Score:</span>
+            <strong id="pause-score">0</strong>
+          </div>
+          <div class="ss-stat-line">
+            <span>Coins:</span>
+            <strong id="pause-coins">0</strong>
+          </div>
+        </div>
+        <div class="ss-modal-buttons">
+          <button id="btn-resume" class="ss-btn-green">RESUME</button>
+          <button id="btn-pause-restart" class="ss-btn-orange">RESTART</button>
+          <button id="btn-sound" class="ss-btn-blue">SOUND: ON</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- GAME OVER SCREEN -->
+    <div id="screen-game-over" class="screen-layer overlay">
+      <div class="ss-modal game-over-modal">
+        <h2 class="ss-modal-title ss-title-red">CRASHED!</h2>
+        
+        <div id="new-record-badge" class="ss-badge-record hidden">★ NEW HIGH SCORE! ★</div>
+
+        <div class="ss-results-grid">
+          <div class="ss-res-box">
+            <span class="res-tag">SCORE</span>
+            <span class="res-num" id="go-score">0</span>
+          </div>
+          <div class="ss-res-box">
+            <span class="res-tag">COINS</span>
+            <span class="res-num gold-text" id="go-coins">0</span>
+          </div>
+          <div class="ss-res-box">
+            <span class="res-tag">DISTANCE</span>
+            <span class="res-num" id="go-dist">0m</span>
+          </div>
+          <div class="ss-res-box">
+            <span class="res-tag">RECORD</span>
+            <span class="res-num" id="go-best">0</span>
+          </div>
+        </div>
+
+        <div class="ss-modal-buttons">
+          <button id="btn-restart" class="ss-btn-green ss-btn-large">
+            <span>PLAY AGAIN</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

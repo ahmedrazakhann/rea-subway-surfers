@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Subway Runner</string>
+    <string name="score_label">Score: %1$d</string>
+    <string name="coins_label">Coins: %1$d</string>
+    <string name="game_over">GAME OVER</string>
+    <string name="tap_to_restart">Tap or Swipe to Restart</string>
+</resources>
